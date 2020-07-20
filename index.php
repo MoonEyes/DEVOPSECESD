@@ -5,6 +5,12 @@
         <meta charset="utf-8" />
     </head>
     <body>
+       <?php
+        include 'header.php'
+      ?>
+
+
+
         <h2>Page de test</h2>
 
         <p>
@@ -21,11 +27,20 @@
 
         <?php
         include 'db.php';
-
-
-        /* Encore du PHP
-        Toujours du PHP */
         ?>
-        <a href="connexion.php"> Inscription </a>
+
+
+
+
+
+        <a href="inscription.php"> Inscription </a>
+        <p>
+        </p>
+        <a href="connexion.php"> connexion </a>
+
+        <?php
+        include 'footer.php'
+        ?>
+
     </body>
 </html>
