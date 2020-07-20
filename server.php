@@ -60,6 +60,8 @@ if (isset($_POST['reg_user'])) {
   }
 }
 
+
+
 // LOGIN USER
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
@@ -89,10 +91,10 @@ if (isset($_POST['login_user'])) {
 if (isset($_POST['info_user'])) {
 
   $user_check_query = "SELECT * FROM users WHERE username='$username'";
-  $results = mysqli_query($db, $query);
-  echo $user_check_query;
-  echo "szqdsqdffef";
-  echo $results;
+  $results = mysqli_query($db, $query)  or die(mysql_error()) ;
+  print $user_check_query;
+  print "szqdsqdffef";
+  print $results;
   echo $user;
   header('location : index.php');
 

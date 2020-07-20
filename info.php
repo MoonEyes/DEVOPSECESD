@@ -9,4 +9,6 @@
   <div class="header">
   	<h2>Info perso</h2>
   </div>
-<button type="submit" class="btn" name="info_user">Info</button>
+  <button type="submit" class="btn" name="info_user">Info</button>
+</body>
+</html>
