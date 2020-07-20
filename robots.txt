@@ -1,0 +1,10 @@
+User-agent: Googlebot
+Disallow: /config/
+Disallow: /css/
+Disallow: /js/
+Disallow: /pages/
+Disallow: /services/
+Disallow: /*.html$
+
+User-agent: *
+Disallow:

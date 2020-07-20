@@ -20,8 +20,12 @@
         </ul>
 
         <?php
+        include 'db.php';
+
+
         /* Encore du PHP
         Toujours du PHP */
         ?>
+        <a href="connexion.php"> Inscription </a>
     </body>
 </html>
