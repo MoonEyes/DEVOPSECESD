@@ -11,6 +11,8 @@
           	unset($_SESSION['username']);
           	header("location: login.php");
           }
+
+
         ?>
         <!DOCTYPE html>
         <html>
@@ -40,6 +42,7 @@
             <?php  if (isset($_SESSION['username'])) : ?>
             	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
             	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+              <p> <a href="info.php"  style="color: red;">info perso</a> </p>
 
 
 
