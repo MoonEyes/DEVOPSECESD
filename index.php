@@ -12,6 +12,7 @@
           }
 
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -146,6 +147,11 @@
             	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
             	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
               <p> <a href="info.php"  style="color: red;">info perso</a> </p>
+              <div class="input-group">
+                <form method="post" action="info.php">
+                <button type="submit" class="btn" name="info_user">Afficher les info de l'utilisateur</button>
+              </div>
+              </from>
 
 
             <?php endif ?>
