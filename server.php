@@ -14,6 +14,7 @@ $db = mysqli_connect("$DB_HOST","$DB_USERNAME", "$DB_PASSWORD", "$DB_DATABASE");
 
 
 
+
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
@@ -89,17 +90,14 @@ if (isset($_POST['login_user'])) {
 }
 
 if (isset($_POST['info_user'])) {
-
-  $user_check_query = "SELECT * FROM users WHERE username='$username'";
-  $results = mysqli_query($db, $query)  or die(mysql_error()) ;
-  print $user_check_query;
-  print "szqdsqdffef";
-  print $results;
-  echo $user;
-  header('location : index.php');
-
-
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $query = "SELECT * FROM users WHERE username='$username'";
+  $resultinfo = mysqli_query($db,$query);
+  $resultinfo = mysqli_fetch_assoc($resultinfo);
+  $_SESSION['infouser'] = $resultinfo  ;
+  header('location: index.php');
 }
+
 
 
 

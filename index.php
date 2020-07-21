@@ -1,5 +1,4 @@
-
-        <?php
+<?php
           session_start();
 
           if (!isset($_SESSION['username'])) {
@@ -12,20 +11,18 @@
           	header("location: login.php");
           }
 
-
-        ?>
-        <!DOCTYPE html>
-        <html>
-        <head>
-        	<title>Home</title>
-        	<link rel="stylesheet" type="text/css" href="style.css">
-        </head>
-        <body>
-
-        <div class="header">
-        	<h2>Home Page</h2>
-        </div>
-        <div class="content">
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="header">
+<h2>Home Page</h2>
+</div>
+<div class="content">
           	<!-- notification message -->
           	<?php if (isset($_SESSION['success'])) : ?>
               <div class="error success" >
@@ -37,6 +34,22 @@
               	</h3>
               </div>
           	<?php endif ?>
+
+            <?php if (isset($_SESSION['infouser'])) : ?>
+              <div class="error success" >
+              	<h3>
+                  <?php
+                      $tableau = $_SESSION['infouser'];
+                      echo $tableau['id'];
+                      echo $tableau['email'];
+                      echo $tableau['username'];
+                  	  unset($_SESSION['infouser']);
+                  ?>
+              	</h3>
+              </div>
+          	<?php endif ?>
+
+
 
             <!-- logged in user information -->
             <?php  if (isset($_SESSION['username'])) : ?>
@@ -54,5 +67,5 @@
             <?php endif ?>
         </div>
 
-        </body>
-        </html>
+</body>
+</html>

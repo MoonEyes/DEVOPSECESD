@@ -2,13 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Info personel</title>
+  <title>Registration system PHP and MySQL</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="header">
-  	<h2>Info perso</h2>
+  	<h2>info</h2>
   </div>
-  <button type="submit" class="btn" name="info_user">Info</button>
-</body>
-</html>
+
+
+  <form method="post" action="info.php">
+    <?php include('errors.php'); ?>
+    <div class="input-group">
+      <label>Username</label>
+      <input type="text" name="username" >
+    </div>
+    <div class="input-group">
+      <button type="submit" class="btn" name="info_user">Login</button>
+    </div>
+    <p>
+
+
+
+  </body>
+  </html>
