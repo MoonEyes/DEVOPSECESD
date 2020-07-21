@@ -18,19 +18,20 @@
   	</div>
     <div class="input-group">
       <button type="submit" class="btn" name="modifystatut">Changer son statut</button>
-    </form>
+
     </div>
     <div class="input-group">
       <button type="submit" class="btn" name="modifydec">Changer sa description</button>
-    </form>
+
     </div>
     <div class="input-group">
       <button type="submit" class="btn" name="modifyage">Changer son age</button>
-    </form>
+
     </div>
     <div class="input-group">
       <button type="submit" class="btn" name="modifyemail">Changer son email</button>
-    </form>
-    </div>
+  
+  </div>
+  </form>
 </body>
 </html>
