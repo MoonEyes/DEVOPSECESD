@@ -20,6 +20,18 @@
   	  <label>Email</label>
   	  <input type="email" name="email" value="<?php echo $email; ?>">
   	</div>
+    <div class="input-group">
+  	  <label>Age</label>
+  	  <input type="text" name="age">
+  	</div>
+    <div class="input-group">
+  	  <label>Statut</label>
+  	  <input type="text" name="statut">
+  	</div>
+    <div class="input-group">
+  	  <label>Description</label>
+  	  <input type="text" name="description">
+  	</div>
   	<div class="input-group">
   	  <label>Password</label>
   	  <input type="password" name="password_1">

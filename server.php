@@ -22,6 +22,9 @@ if (isset($_POST['reg_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+  $age = mysqli_real_escape_string($db, $_POST['age']);
+  $statut = mysqli_real_escape_string($db, $_POST['statut']);
+  $description = mysqli_real_escape_string($db, $_POST['description']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -52,8 +55,8 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password)
-  			  VALUES('$username', '$email', '$password')";
+  	$query = "INSERT INTO users (username, email, password, age, statut, description)
+  			  VALUES('$username', '$email', '$password', '$age', '$statut' ,'$description')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
@@ -88,8 +91,34 @@ if (isset($_POST['login_user'])) {
   	}
   }
 }
-
+// info user
 if (isset($_POST['info_user'])) {
+  $username = mysqli_real_escape_string($db, $_SESSION['username']);
+  $query = "SELECT * FROM users WHERE username='$username'";
+  $resultinfo = mysqli_query($db,$query);
+  $resultinfo = mysqli_fetch_assoc($resultinfo);
+  $_SESSION['infouser'] = $resultinfo  ;
+  header('location: index.php');
+}
+
+// Info all user
+if (isset($_POST['info_all_user'])) {
+
+  $query = "SELECT username FROM users";
+  $resultinfo = mysqli_query($db,$query);
+  $i = 0;
+  while ($tableau = mysqli_fetch_assoc($resultinfo)){
+    $array[] = $tableau["username"];
+    $i++;
+  }
+  $_SESSION['infoalluser'] = $array ;
+  $_SESSION['nbligne'] = $i;
+  header('location: index.php');
+}
+
+
+//info one user
+if (isset($_POST['info_one_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $query = "SELECT * FROM users WHERE username='$username'";
   $resultinfo = mysqli_query($db,$query);
@@ -98,6 +127,70 @@ if (isset($_POST['info_user'])) {
   header('location: index.php');
 }
 
+
+//info one user
+if (isset($_POST['desuser'])) {
+  $username = mysqli_real_escape_string($db, $_SESSION['username']);
+  $query = "DELETE FROM users WHERE username='$username'";
+  if (mysqli_query($db, $query)) {
+  $_SESSION['desinc'] = "Vous êtes désincris";
+} else {
+  $_SESSION['desinc'] = "Error";
+}
+  header('location: index.php');
+}
+
+//modify Statut
+if (isset($_POST['modifystatut'])) {
+  $statut = mysqli_real_escape_string($db,$_POST['changetext']);
+  $username = mysqli_real_escape_string($db, $_SESSION['username']);
+  $query = "UPDATE users SET statut='$statut' WHERE username='$username'";
+  if (mysqli_query($db, $query)) {
+  $_SESSION['modifystatut'] = "Modification fait";
+} else {
+  $_SESSION['modifystatut'] = "Error";
+}
+  header('location: index.php');
+}
+
+
+//modify Statut
+if (isset($_POST['modifydec'])) {
+  $description = mysqli_real_escape_string($db,$_POST['changetext']);
+  $username = mysqli_real_escape_string($db, $_SESSION['username']);
+  $query = "UPDATE users SET description='$description' WHERE username='$username'";
+  if (mysqli_query($db, $query)) {
+  $_SESSION['modifydec'] = "Modification fait";
+} else {
+  $_SESSION['modifydec'] = "Error";
+}
+  header('location: index.php');
+}
+
+
+if (isset($_POST['modifyage'])) {
+  $age = mysqli_real_escape_string($db,$_POST['changetext']);
+  $username = mysqli_real_escape_string($db, $_SESSION['username']);
+  $query = "UPDATE users SET age='$age' WHERE username='$username'";
+  if (mysqli_query($db, $query)) {
+  $_SESSION['modifyage'] = "Modification fait";
+} else {
+  $_SESSION['modifyage'] = "Error";
+}
+  header('location: index.php');
+}
+
+if (isset($_POST['modifyemail'])) {
+  $email = mysqli_real_escape_string($db,$_POST['changetext']);
+  $username = mysqli_real_escape_string($db, $_SESSION['username']);
+  $query = "UPDATE users SET email='$email' WHERE username='$username'";
+  if (mysqli_query($db, $query)) {
+  $_SESSION['modifyemail'] = "Modification fait";
+} else {
+  $_SESSION['modifyemail'] = "Error";
+}
+  header('location: index.php');
+}
 
 
 
