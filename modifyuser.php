@@ -23,6 +23,7 @@
     <div class="input-group">
       <button type="submit" class="btn" name="modifydec">Changer sa description</button>
 
+
     </div>
     <div class="input-group">
       <button type="submit" class="btn" name="modifyage">Changer son age</button>
@@ -30,7 +31,7 @@
     </div>
     <div class="input-group">
       <button type="submit" class="btn" name="modifyemail">Changer son email</button>
-  
+    
   </div>
   </form>
 </body>

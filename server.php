@@ -71,6 +71,10 @@ if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
 
+  $bytes = random_bytes(32);
+  $token = var_dump(bin2hex($bytes));
+  $_SESSION['token'] = $token;
+
   if (empty($username)) {
   	array_push($errors, "Username is required");
   }
@@ -91,106 +95,107 @@ if (isset($_POST['login_user'])) {
   	}
   }
 }
-// info user
-if (isset($_POST['info_user'])) {
-  $username = mysqli_real_escape_string($db, $_SESSION['username']);
-  $query = "SELECT * FROM users WHERE username='$username'";
-  $resultinfo = mysqli_query($db,$query);
-  $resultinfo = mysqli_fetch_assoc($resultinfo);
-  $_SESSION['infouser'] = $resultinfo  ;
-  header('location: index.php');
-}
 
-// Info all user
-if (isset($_POST['info_all_user'])) {
+            // info user
+            if (isset($_POST['info_user'])) {
+              $username = mysqli_real_escape_string($db, $_SESSION['username']);
+              $query = "SELECT * FROM users WHERE username='$username'";
+              $resultinfo = mysqli_query($db,$query);
+              $resultinfo = mysqli_fetch_assoc($resultinfo);
+              $_SESSION['infouser'] = $resultinfo  ;
+              header('location: index.php');
+            }
 
-  $query = "SELECT username FROM users";
-  $resultinfo = mysqli_query($db,$query);
-  $i = 0;
-  while ($tableau = mysqli_fetch_assoc($resultinfo)){
-    $array[] = $tableau["username"];
-    $i++;
-  }
-  $_SESSION['infoalluser'] = $array ;
-  $_SESSION['nbligne'] = $i;
-  header('location: index.php');
-}
+            // Info all user
+            if (isset($_POST['info_all_user'])) {
 
-
-//info one user
-if (isset($_POST['info_one_user'])) {
-  $username = mysqli_real_escape_string($db, $_POST['username']);
-  $query = "SELECT * FROM users WHERE username='$username'";
-  $resultinfo = mysqli_query($db,$query);
-  $resultinfo = mysqli_fetch_assoc($resultinfo);
-  $_SESSION['infouser'] = $resultinfo  ;
-  header('location: index.php');
-}
+              $query = "SELECT username FROM users";
+              $resultinfo = mysqli_query($db,$query);
+              $i = 0;
+              while ($tableau = mysqli_fetch_assoc($resultinfo)){
+                $array[] = $tableau["username"];
+                $i++;
+              }
+              $_SESSION['infoalluser'] = $array ;
+              $_SESSION['nbligne'] = $i;
+              header('location: index.php');
+            }
 
 
-//info one user
-if (isset($_POST['desuser'])) {
-  $username = mysqli_real_escape_string($db, $_SESSION['username']);
-  $query = "DELETE FROM users WHERE username='$username'";
-  if (mysqli_query($db, $query)) {
-  $_SESSION['desinc'] = "Vous êtes désincris";
-} else {
-  $_SESSION['desinc'] = "Error";
-}
-  header('location: index.php');
-}
-
-//modify Statut
-if (isset($_POST['modifystatut'])) {
-  $statut = mysqli_real_escape_string($db,$_POST['changetext']);
-  $username = mysqli_real_escape_string($db, $_SESSION['username']);
-  $query = "UPDATE users SET statut='$statut' WHERE username='$username'";
-  if (mysqli_query($db, $query)) {
-  $_SESSION['modifystatut'] = "Modification fait";
-} else {
-  $_SESSION['modifystatut'] = "Error";
-}
-  header('location: index.php');
-}
+            //info one user
+            if (isset($_POST['info_one_user'])) {
+              $username = mysqli_real_escape_string($db, $_POST['username']);
+              $query = "SELECT * FROM users WHERE username='$username'";
+              $resultinfo = mysqli_query($db,$query);
+              $resultinfo = mysqli_fetch_assoc($resultinfo);
+              $_SESSION['infouser'] = $resultinfo  ;
+              header('location: index.php');
+            }
 
 
-//modify Statut
-if (isset($_POST['modifydec'])) {
-  $description = mysqli_real_escape_string($db,$_POST['changetext']);
-  $username = mysqli_real_escape_string($db, $_SESSION['username']);
-  $query = "UPDATE users SET description='$description' WHERE username='$username'";
-  if (mysqli_query($db, $query)) {
-  $_SESSION['modifydec'] = "Modification fait";
-} else {
-  $_SESSION['modifydec'] = "Error";
-}
-  header('location: index.php');
-}
+            //info one user
+            if (isset($_POST['desuser'])) {
+              $username = mysqli_real_escape_string($db, $_SESSION['username']);
+              $query = "DELETE FROM users WHERE username='$username'";
+              if (mysqli_query($db, $query)) {
+              $_SESSION['desinc'] = "Vous êtes désincrits";
+            } else {
+              $_SESSION['desinc'] = "Error";
+            }
+              header('location: index.php');
+            }
+
+            //modify Statut
+            if (isset($_POST['modifystatut'])) {
+              $statut = mysqli_real_escape_string($db,$_POST['changetext']);
+              $username = mysqli_real_escape_string($db, $_SESSION['username']);
+              $query = "UPDATE users SET statut='$statut' WHERE username='$username'";
+              if (mysqli_query($db, $query)) {
+              $_SESSION['modifystatut'] = "Modification fait";
+            } else {
+              $_SESSION['modifystatut'] = "Error";
+            }
+              header('location: index.php');
+            }
 
 
-if (isset($_POST['modifyage'])) {
-  $age = mysqli_real_escape_string($db,$_POST['changetext']);
-  $username = mysqli_real_escape_string($db, $_SESSION['username']);
-  $query = "UPDATE users SET age='$age' WHERE username='$username'";
-  if (mysqli_query($db, $query)) {
-  $_SESSION['modifyage'] = "Modification fait";
-} else {
-  $_SESSION['modifyage'] = "Error";
-}
-  header('location: index.php');
-}
+            //modify Statut
+            if (isset($_POST['modifydec'])) {
+              $description = mysqli_real_escape_string($db,$_POST['changetext']);
+              $username = mysqli_real_escape_string($db, $_SESSION['username']);
+              $query = "UPDATE users SET description='$description' WHERE username='$username'";
+              if (mysqli_query($db, $query)) {
+              $_SESSION['modifydec'] = "Modification fait";
+            } else {
+              $_SESSION['modifydec'] = "Error";
+            }
+              header('location: index.php');
+            }
 
-if (isset($_POST['modifyemail'])) {
-  $email = mysqli_real_escape_string($db,$_POST['changetext']);
-  $username = mysqli_real_escape_string($db, $_SESSION['username']);
-  $query = "UPDATE users SET email='$email' WHERE username='$username'";
-  if (mysqli_query($db, $query)) {
-  $_SESSION['modifyemail'] = "Modification fait";
-} else {
-  $_SESSION['modifyemail'] = "Error";
-}
-  header('location: index.php');
-}
+
+            if (isset($_POST['modifyage'])) {
+              $age = mysqli_real_escape_string($db,$_POST['changetext']);
+              $username = mysqli_real_escape_string($db, $_SESSION['username']);
+              $query = "UPDATE users SET age='$age' WHERE username='$username'";
+              if (mysqli_query($db, $query)) {
+              $_SESSION['modifyage'] = "Modification fait";
+            } else {
+              $_SESSION['modifyage'] = "Error";
+            }
+              header('location: index.php');
+            }
+
+            if (isset($_POST['modifyemail'])) {
+              $email = mysqli_real_escape_string($db,$_POST['changetext']);
+              $username = mysqli_real_escape_string($db, $_SESSION['username']);
+              $query = "UPDATE users SET email='$email' WHERE username='$username'";
+              if (mysqli_query($db, $query)) {
+              $_SESSION['modifyemail'] = "Modification fait";
+            } else {
+              $_SESSION['modifyemail'] = "Error";
+            }
+              header('location: index.php');
+            }
 
 
 

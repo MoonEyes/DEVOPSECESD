@@ -17,7 +17,8 @@
   		<input type="test" name="username">
   	</div>
     <div class="input-group">
-      <button type="submit" class="btn" name="info_one_user">Afficher les infos de l'utilisateur souhaiter</button>
+      <button type="submit" class="btn" name="info_one_user">Afficher les infos de l'utilisateur </button>
+      
   </form>
 </body>
 </html>
