@@ -1,0 +1,326 @@
+
+FILE: /opt/mount/src/server.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 13 WARNINGS AFFECTING 13 LINES
+----------------------------------------------------------------------
+  41 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+  56 | WARNING | Crypto function md5 used.
+  60 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+  86 | WARNING | Crypto function md5 used.
+  88 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 103 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 113 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 129 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 140 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 153 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 167 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 180 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+ 192 | WARNING | MYSQLi function mysqli_query() detected with dynamic
+     |         | parameter 
+----------------------------------------------------------------------
+
+
+FILE: /opt/mount/src/index.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 14 WARNINGS AFFECTING 14 LINES
+----------------------------------------------------------------------
+  34 | WARNING | Possible XSS detected with $_SESSION on echo
+  46 | WARNING | Possible XSS detected with $tableau on echo
+  48 | WARNING | Possible XSS detected with $tableau on echo
+  50 | WARNING | Possible XSS detected with $tableau on echo
+  52 | WARNING | Possible XSS detected with $tableau on echo
+  54 | WARNING | Possible XSS detected with $tableau on echo
+  56 | WARNING | Possible XSS detected with $tableau on echo
+  72 | WARNING | Possible XSS detected with $tableau on print
+  86 | WARNING | Possible XSS detected with $_SESSION on echo
+ 104 | WARNING | Possible XSS detected with $_SESSION on echo
+ 115 | WARNING | Possible XSS detected with $_SESSION on echo
+ 126 | WARNING | Possible XSS detected with $_SESSION on echo
+ 137 | WARNING | Possible XSS detected with $_SESSION on echo
+ 148 | WARNING | Possible XSS detected with $_SESSION on echo
+----------------------------------------------------------------------
+
+
+FILE: /opt/mount/src/errors.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 4 | WARNING | Possible XSS detected with $error on echo
+----------------------------------------------------------------------
+
+
+FILE: /opt/mount/src/infooneuser.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 16 WARNINGS AFFECTING 14 LINES
+----------------------------------------------------------------------
+  1 | WARNING | Possible RFI detected with ?>
+
+    |         |  on include
+  2 | WARNING | Possible RFI detected with <!DOCTYPE html>
+
+    |         |  on include
+  3 | WARNING | Possible RFI detected with <html>
+
+    |         |  on include
+  4 | WARNING | Possible RFI detected with <head>
+
+    |         |  on include
+  5 | WARNING | Possible RFI detected with   <title>Registration
+    |         | system PHP and MySQL</title>
+
+    |         |  on include
+  6 | WARNING | Possible RFI detected with   <link rel="stylesheet"
+    |         | type="text/css" href="style.css">
+
+    |         |  on include
+  7 | WARNING | Possible RFI detected with </head>
+
+    |         |  on include
+  8 | WARNING | Possible RFI detected with <body>
+
+    |         |  on include
+  9 | WARNING | Possible RFI detected with   <div class="header">
+
+    |         |  on include
+ 10 | WARNING | Possible RFI detected with   	<h2>Login</h2>
+
+    |         |  on include
+ 11 | WARNING | Possible RFI detected with   </div>
+
+    |         |  on include
+ 12 | WARNING | Possible RFI detected with 
+
+    |         |  on include
+ 13 | WARNING | Possible RFI detected with   <form method="post"
+    |         | action="login.php">
+
+    |         |  on include
+ 14 | WARNING | Possible RFI detected with   	 on include
+ 14 | WARNING | Possible RFI detected with <?php  on include
+ 14 | WARNING | Possible RFI detected with include on include
+----------------------------------------------------------------------
+
+
+FILE: /opt/mount/src/login.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 16 WARNINGS AFFECTING 14 LINES
+----------------------------------------------------------------------
+  1 | WARNING | Possible RFI detected with ?>
+
+    |         |  on include
+  2 | WARNING | Possible RFI detected with <!DOCTYPE html>
+
+    |         |  on include
+  3 | WARNING | Possible RFI detected with <html>
+
+    |         |  on include
+  4 | WARNING | Possible RFI detected with <head>
+
+    |         |  on include
+  5 | WARNING | Possible RFI detected with   <title>Registration
+    |         | system PHP and MySQL</title>
+
+    |         |  on include
+  6 | WARNING | Possible RFI detected with   <link rel="stylesheet"
+    |         | type="text/css" href="style.css">
+
+    |         |  on include
+  7 | WARNING | Possible RFI detected with </head>
+
+    |         |  on include
+  8 | WARNING | Possible RFI detected with <body>
+
+    |         |  on include
+  9 | WARNING | Possible RFI detected with   <div class="header">
+
+    |         |  on include
+ 10 | WARNING | Possible RFI detected with   	<h2>Login</h2>
+
+    |         |  on include
+ 11 | WARNING | Possible RFI detected with   </div>
+
+    |         |  on include
+ 12 | WARNING | Possible RFI detected with 
+
+    |         |  on include
+ 13 | WARNING | Possible RFI detected with   <form method="post"
+    |         | action="login.php">
+
+    |         |  on include
+ 14 | WARNING | Possible RFI detected with   	 on include
+ 14 | WARNING | Possible RFI detected with <?php  on include
+ 14 | WARNING | Possible RFI detected with include on include
+----------------------------------------------------------------------
+
+
+FILE: /opt/mount/src/modifyuser.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 16 WARNINGS AFFECTING 14 LINES
+----------------------------------------------------------------------
+  1 | WARNING | Possible RFI detected with ?>
+
+    |         |  on include
+  2 | WARNING | Possible RFI detected with <!DOCTYPE html>
+
+    |         |  on include
+  3 | WARNING | Possible RFI detected with <html>
+
+    |         |  on include
+  4 | WARNING | Possible RFI detected with <head>
+
+    |         |  on include
+  5 | WARNING | Possible RFI detected with   <title>Registration
+    |         | system PHP and MySQL</title>
+
+    |         |  on include
+  6 | WARNING | Possible RFI detected with   <link rel="stylesheet"
+    |         | type="text/css" href="style.css">
+
+    |         |  on include
+  7 | WARNING | Possible RFI detected with </head>
+
+    |         |  on include
+  8 | WARNING | Possible RFI detected with <body>
+
+    |         |  on include
+  9 | WARNING | Possible RFI detected with   <div class="header">
+
+    |         |  on include
+ 10 | WARNING | Possible RFI detected with   	<h2>Login</h2>
+
+    |         |  on include
+ 11 | WARNING | Possible RFI detected with   </div>
+
+    |         |  on include
+ 12 | WARNING | Possible RFI detected with 
+
+    |         |  on include
+ 13 | WARNING | Possible RFI detected with   <form method="post"
+    |         | action="login.php">
+
+    |         |  on include
+ 14 | WARNING | Possible RFI detected with   	 on include
+ 14 | WARNING | Possible RFI detected with <?php  on include
+ 14 | WARNING | Possible RFI detected with include on include
+----------------------------------------------------------------------
+
+
+FILE: /opt/mount/src/info.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 17 WARNINGS AFFECTING 15 LINES
+----------------------------------------------------------------------
+  1 | WARNING | Possible RFI detected with ?>
+
+    |         |  on include
+  2 | WARNING | Possible RFI detected with <!DOCTYPE html>
+
+    |         |  on include
+  3 | WARNING | Possible RFI detected with <html>
+
+    |         |  on include
+  4 | WARNING | Possible RFI detected with <head>
+
+    |         |  on include
+  5 | WARNING | Possible RFI detected with   <title>Registration
+    |         | system PHP and MySQL</title>
+
+    |         |  on include
+  6 | WARNING | Possible RFI detected with   <link rel="stylesheet"
+    |         | type="text/css" href="style.css">
+
+    |         |  on include
+  7 | WARNING | Possible RFI detected with </head>
+
+    |         |  on include
+  8 | WARNING | Possible RFI detected with <body>
+
+    |         |  on include
+  9 | WARNING | Possible RFI detected with   <div class="header">
+
+    |         |  on include
+ 10 | WARNING | Possible RFI detected with   	<h2>info</h2>
+
+    |         |  on include
+ 11 | WARNING | Possible RFI detected with   </div>
+
+    |         |  on include
+ 12 | WARNING | Possible RFI detected with 
+
+    |         |  on include
+ 13 | WARNING | Possible RFI detected with 
+
+    |         |  on include
+ 14 | WARNING | Possible RFI detected with   <form method="post"
+    |         | action="info.php">
+
+    |         |  on include
+ 15 | WARNING | Possible RFI detected with      on include
+ 15 | WARNING | Possible RFI detected with <?php  on include
+ 15 | WARNING | Possible RFI detected with include on include
+----------------------------------------------------------------------
+
+
+FILE: /opt/mount/src/register.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 18 WARNINGS AFFECTING 16 LINES
+----------------------------------------------------------------------
+  1 | WARNING | Possible RFI detected with ?>
+
+    |         |  on include
+  2 | WARNING | Possible RFI detected with <!DOCTYPE html>
+
+    |         |  on include
+  3 | WARNING | Possible RFI detected with <html>
+
+    |         |  on include
+  4 | WARNING | Possible RFI detected with <head>
+
+    |         |  on include
+  5 | WARNING | Possible RFI detected with   <title>Registration
+    |         | system PHP and MySQL</title>
+
+    |         |  on include
+  6 | WARNING | Possible RFI detected with   <link rel="stylesheet"
+    |         | type="text/css" href="style.css">
+
+    |         |  on include
+  7 | WARNING | Possible RFI detected with </head>
+
+    |         |  on include
+  8 | WARNING | Possible RFI detected with <body>
+
+    |         |  on include
+  9 | WARNING | Possible RFI detected with   <div class="header">
+
+    |         |  on include
+ 10 | WARNING | Possible RFI detected with   	<h2>Register</h2>
+
+    |         |  on include
+ 11 | WARNING | Possible RFI detected with   </div>
+
+    |         |  on include
+ 12 | WARNING | Possible RFI detected with 
+
+    |         |  on include
+ 13 | WARNING | Possible RFI detected with   <form method="post"
+    |         | action="register.php">
+
+    |         |  on include
+ 14 | WARNING | Possible RFI detected with   	 on include
+ 14 | WARNING | Possible RFI detected with <?php  on include
+ 14 | WARNING | Possible RFI detected with include on include
+ 17 | WARNING | Possible XSS detected with $username on echo
+ 21 | WARNING | Possible XSS detected with $email on echo
+----------------------------------------------------------------------
+
+Time: 34ms; Memory: 4Mb
